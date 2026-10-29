@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'DancingPeople';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610082345@dancingpeoples-dance-vf/dancingpeoples-dance-vf/DancingPeoples-Dance-VF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.font-dancing-people {
+  font-family: 'DancingPeople', 'Jua', 'Noto Sans KR', cursive, sans-serif;
+}
+
+.font-jua {
+  font-family: 'DancingPeople', 'Jua', 'Noto Sans KR', cursive, sans-serif;
+}
+
+.font-gaegu {
+  font-family: 'Gaegu', 'Noto Sans KR', cursive, sans-serif;
+}
+
+@keyframes flash-screen {
+  0% { opacity: 0; }
+  15% { opacity: 0.95; }
+  100% { opacity: 0; }
+}
+
+.animate-flash {
+  animation: flash-screen 0.4s ease-out forwards;
+}
+
+@keyframes scale-pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale {
+  animation: scale-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print Layout Support */
+@media print {
+  body {
+    background: transparent !important;
+  }
+  
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+  
+  #printable-photo-strip {
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border-width: 6px !important;
+    page-break-inside: avoid;
+  }
+}
